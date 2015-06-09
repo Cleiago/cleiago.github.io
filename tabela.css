@@ -1,0 +1,29 @@
+table {
+	border-spacing: 0px;
+	border: 2px blue solid;
+	font-family: sans-serif;
+}
+td {
+	text-align: center;
+	padding: 2px 25px 0px 25px;
+	border-top: 1px red dashed;
+	border-left: 1px red dashed;
+}
+
+tr:nth-child(2) td{
+	border-top: 0px;
+}
+td:nth-child(2) {
+	border-left: 0px;
+}
+
+tr:nth-child(even) td{
+	background-color: lightgrey;
+}
+
+tr:nth-child(1) td, tr td:nth-child(1){
+	color: white;
+	border: 1px black solid;
+	background-color: black;
+	font-weight: bold;
+}
