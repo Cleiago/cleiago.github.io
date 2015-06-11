@@ -23,7 +23,7 @@
 
 		$login = $_POST["login"];
 		$senha = $_POST["pass"];
-		$query = "SELECT name FROM user WHERE login ='".$login."' AND password ='".$senha."'";
+		$query = "SELECT name FROM User WHERE login ='".$login."' AND password ='".$senha."'";
 		$resultado = query($banco, $query);
 
 		if(mysqli_num_rows($resultado)>0){
