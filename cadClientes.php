@@ -9,6 +9,7 @@
 </head>
 <body>
 	<h3>Cadastro de Novo Cliente</h3>
+	<a href="index.php"><button>Home</button></a>s
 		<?php 
 		if(isset($_SESSION["login"])){
 			
@@ -28,7 +29,7 @@
 				$tel1 = $_POST['tel1'];
 				$tel2 = $_POST['tel2'];
 
-				$query = "INSERT INTO Cliente VALUES ('$cpf','$nome','$dtnasc','$ender','$cidade','$uf','$tel1','$tel2')";
+				$query = "INSERT INTO cliente VALUES ('$cpf','$nome','$dtnasc','$ender','$cidade','$uf','$tel1','$tel2')";
 				//echo $query;
 				
 				$resultado = query($banco, $query);
@@ -74,13 +75,15 @@
 				require_once 'extrafunc.php';
 				if($resultado){
 					echo "<p>Cliente Cadastrado!</p>";
-					$query = "SELECT * FROM Cliente WHERE cpf='$cpf'";
-					PullValues(query($banco,$query));
+					$query = "SELECT * FROM cliente WHERE cpf='$cpf'";
+					PrintTable(query($banco,$query));
 				}
 			}
 		}else{
 			echo "<meta http-equiv=\"refresh\" content=\"0; url=authentication.php?url=cadClientes.php\">";
+			exit;
 		}
 		?>
+
 </body>
 </html>

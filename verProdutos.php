@@ -6,6 +6,8 @@
 	<meta charset='UTF-8'>
 </head>
 <body>
+	<h3>sProdutos</h3>
+	<a href="index.php"><button>Home</button></a>
 	<?php 
 	if(isset($_SESSION["login"])){
 		
@@ -15,8 +17,8 @@
 		$banco = conectadb($dbHostname, $dbUsername, $dbPassword);
 		selectdb($banco, $dbDatabase);
 
-		$query = "SELECT * FROM Produto LEFT JOIN Hq ON codp=produto_codp LEFT JOIN Videogame V ON codp=V.produto_codp ORDER BY codp";
-		PullValues(query($banco,$query));
+		$query = "SELECT * FROM produto LEFT JOIN Hq ON codp=produto_codp LEFT JOIN videogame v ON codp=v.produto_codp WHERE codp NOT IN (SELECT produto_codp from aluga UNION SELECT produto_codp FROM compra) ORDER BY codp";
+		PrintTable(query($banco,$query));
 
 	}else{
 		echo "<meta http-equiv=\"refresh\" content=\"0; url=authentication.php?url=verProdutos.php\">";
