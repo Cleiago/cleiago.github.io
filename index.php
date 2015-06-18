@@ -11,6 +11,7 @@
 	<h1>Cleiago Comics</h1>
 	<?php 
 		if(isset($_SESSION["login"])){
+			echo "<p><a href=\"logout.php\"><button>Log Out</button></a></p>";
 			echo "<p><a href=\"cadClientes.php\"><button>Cadastrar Clientes</button></a></p>";
 			echo "<p><a href=\"verClientes.php\"><button>Lista de Clientes</button></a></p>";
 			echo "<p><a href=\"cadProdutos.php\"><button>Cadastrar Produtos</button></a></p>";
