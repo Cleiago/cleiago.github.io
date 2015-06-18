@@ -4,7 +4,6 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="index.css">
 	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
 	<title>Cleiago Comics</title>
@@ -12,9 +11,9 @@
 <body>
 	<nav>
     	<div class="nav-wrapper">
-    		<a href="#!" class="brand-logo">CleiAgo COMICS</a>
+    		<a href="#!" class="brand-logo right">Cleiago Comics</a>
     		<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-    		<ul class="right hide-on-med-and-down">
+    		<ul class="light hide-on-med-and-down">
     			<li><a href="sass.html"></a></li>
     			<li><a href="components.html">Components</a></li>
     			<li><a href="javascript.html">Javascript</a></li>
