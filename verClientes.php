@@ -8,6 +8,8 @@
 	?>
 </head>
 <body>
+	<h3>Clientes</h3>
+	<a href="index.php"><button>Home</button></a>
 	<?php 
 		if(isset($_SESSION["login"])){
 			require_once 'fcnsdb.php';
@@ -17,8 +19,8 @@
 			$banco = conectadb($dbHostname, $dbUsername, $dbPassword);
 			selectdb($banco, $dbDatabase);
 		
-			$query = "SELECT * FROM Cliente";
-			PullValues(query($banco,$query));
+			$query = "SELECT * FROM cliente";
+			PrintTable(query($banco,$query));
 		}else{
 			echo "<meta http-equiv=\"refresh\" content=\"0; url=authentication.php?url=verClientes.php\">";
 		}

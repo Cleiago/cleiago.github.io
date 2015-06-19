@@ -2,11 +2,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css" rel="stylesheet" />
+	<script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
 	<title>Cadastro de Produtos</title>
 	<meta charset='UTF-8'>
 </head>
 <body>
 	<h3>Cadastro de Novo Produto</h3>
+	<a href="index.php"><button>Home</button></a>
 	<?php 
 	if(isset($_SESSION["login"])){
 		
@@ -26,19 +30,19 @@
 			$vlaluga	= $_POST['vlaluga'];
 			$estfisico	= $_POST['estfisico'];
 			
-			$query = "INSERT INTO Produto(nome,genero,classet,ano,vlvenda,vlaluga,estfisico) VALUES ('$nome','$genero','$classet','$ano','$vlvenda','$vlaluga','$estfisico')";
+			$query = "INSERT INTO produto(nome,genero,classet,ano,vlvenda,vlaluga,estfisico) VALUES ('$nome','$genero','$classet','$ano','$vlvenda','$vlaluga','$estfisico')";
 			$resultado = query($banco, $query);
 			
 			//hq
-			if ($_POST['tipo'] == 'hq'){
+			if ($_POST['tipo'] == 'lv'){
 				$isbn 	= $_POST['isbn'];
 				$autor 	= $_POST['autor'];
 
-				$query 	= "SELECT max(codp) FROM Produto";
+				$query 	= "SELECT max(codp) FROM produto";
 				$resultado = query($banco, $query);
 				$codp 	= mysqli_fetch_row($resultado)[0];
 
-				$query 	= "INSERT INTO Hq VALUES ('$isbn','$codp','$autor')";
+				$query 	= "INSERT INTO livro VALUES ('$isbn','$codp','$autor')";
 				$resultado = query($banco, $query);
 			}
 			//videogame
@@ -46,11 +50,11 @@
 				$desenv 	= $_POST['desenv'];
 				$console 	= $_POST['console'];
 
-				$query 	= "SELECT max(codp) FROM Produto";
+				$query 	= "SELECT max(codp) FROM produto";
 				$resultado = query($banco, $query);
 				$codp 	= mysqli_fetch_row($resultado)[0];
 
-				$query 	= "INSERT INTO Videogame VALUES ('$desenv','$codp','$console')";
+				$query 	= "INSERT INTO videogame VALUES ('$desenv','$codp','$console')";
 				$resultado = query($banco, $query);
 			}
 		}
@@ -95,13 +99,13 @@
 				<p>
 					<label for='tipo'>Tipo:</label>
 					<label>
-						<input type='radio' name='tipo' id='hq' value='hq' onclick='changeFields()' required>HQ
+						<input type='radio' name='tipo' id='hq' value='lv' onclick='changeFields()' required>Livro
 					</label>
 					<label>
 						<input type='radio' name='tipo' id='vg' value='vg' onclick='changeFields()' required>Video Game
 					</label>
 				</p>
-				<div id='hqFields' style='display:none'>
+				<div id='lvFields' style='display:none'>
 				<p>
 					<label for='isbn'>ISBN:</label>
 					<input type='text' class='hq' id='isbn' name='isbn'>
@@ -129,11 +133,11 @@
 			if($resultado){
 				echo "<p>Produto Cadastrado!</p>";
 				if ($_POST['tipo']=='hq'){
-					$query = "SELECT Produto.*,autor,isbn FROM Produto JOIN Hq ON codp=produto_codp WHERE codp=(SELECT max(codp) FROM Produto)";
+					$query = "SELECT produto.*,autor,isbn FROM produto JOIN livro ON codp=produto_codp WHERE codp=(SELECT max(codp) FROM produto)";
 				} else if ($_POST['tipo']=='vg'){
-					$query = "SELECT Produto.*,desenv,console FROM Produto JOIN Videogame ON codp=produto_codp WHERE codp=(SELECT max(codp) FROM Produto)";
+					$query = "SELECT produto.*,desenv,console FROM produto JOIN videogame ON codp=produto_codp WHERE codp=(SELECT max(codp) FROM produto)";
 				}
-				PullValues(query($banco,$query));
+				PrintTable(query($banco,$query));
 			}
 		}
 
@@ -144,8 +148,8 @@
 	
 	<script type="text/javascript">
 		function changeFields(){
-			if(document.getElementById('hq').checked){
-				document.getElementById('hqFields').style.display='block';
+			if(document.getElementById('lv').checked){
+				document.getElementById('lvFields').style.display='block';
 				document.getElementById('vgFields').style.display='none';
 				document.getElementById('isbn').required = true;
 				document.getElementById('autor').required = true;
@@ -160,6 +164,10 @@
 				document.getElementById('autor').required = false;
 			}
 		}
+
+		$(document).ready(function() {
+			$('#estfisico').select2();
+		})
 	</script>
 </body>
 </html>
