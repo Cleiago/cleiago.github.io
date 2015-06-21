@@ -5,34 +5,55 @@
 <head>
 	<meta charset="UTF-8">
 	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  <link rel="stylesheet" href="index.css">
+
 	<title>Cleiago Comics</title>
+
 </head>
 <body>
-  <ul id="dropdown1" class="dropdown-content">
-    <li><a href="#!">Cadastrar Clientes</a></li>
-    <li class="divider"></li>
-    <li><a href="#!">Lista Clientes</a></li>
-  </ul>
-  <ul id="dropdown2" class="dropdown-content">
-    <li><a href="#!">Cadastrar Produtos</a></li>
-    <li class="divider"></li>
-    <li><a href="#!">Lista Produtos</a></li>
-  </ul>
-	<nav>
-    	<div class="nav-wrapper">
-    		<a href="#!" class="brand-logo right">CLEIAGO COMICS</a>
-    		<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-    		<ul class="light hide-on-med-and-down">
-    			<li><a class="dropdown-button" href="#!" data-activates="dropdown1">Clientes<i class="mdi-navigation-arrow-drop-down right"></i></a></li>
-          <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Produtos<i class="mdi-navigation-arrow-drop-down right"></i></a></li>
-    		</ul>
-    		<ul class="side-nav" id="mobile-demo">
-    			<li><a class="dropdown-button" href="#!" data-activates="dropdown1">Clientes<i class="mdi-navigation-arrow-drop-down right"></i></a></li>
-          <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Produtos<i class="mdi-navigation-arrow-drop-down right"></i></a></li>
-    		</ul>
-    	</div>
-  	</nav>
+	
+    <nav>
+      <div class="nav-wrapper">
+      <a href="#" data-activates="mobile-sidenav" class="button-collapse"><i class="mdi-navigation-menu"></i><span class="controller controller-nav-mobile" id="btRB"></span></a>
+        <a class="brand-logo right" href="/">CLEIAGO</a>
+        <ul id="nav-mobile" class="light hide-on-med-and-down">
+          <span class="controller controller-nav" id="btRB"></span>
+          <ul id="dropdown2" class="dropdown-content">
+            <li><a href="#!" class="black-text text">Lista Clientes</a></li>
+            <li><a href="#!" class="black-text text">Cadastrar Clientes</a></li>
+          </ul>
+          <span class="controller controller-nav" id="btRB"></span>
+          <ul id="dropdown3" class="dropdown-content">
+            <li><a href="#!" class="black-text text">Lista Produtos</a></li>
+            <li><a href="#!" class="black-text text">Cadastrar Produtos</a></li>
+          </ul>
+          <a class="red lighten-2 btn dropdown-button" href="#!" data-activates="dropdown2">Clientes<i class= "mdi-navigation-expand-more right"></i></a>
+          <a class="red lighten-2 btn dropdown-button" href="#!" data-activates="dropdown3">Produtos<i class= "mdi-navigation-expand-more right"></i></a>
+         
+        </ul>
+        <ul id="mobile-sidenav" class="side-nav">
+         <span class="controller controller-nav" id="btRB"></span>
+          <ul id="dropdown4" class="dropdown-content">
+
+            
+                <li><a href="cadClientes.php" class="black-text text">Cadastrar Clientes</a></li>;
+                <li><a href="verClientes.php" class="black-text text">Lista Clientes</a></li>;
+              
+        
+
+          </ul>
+          <span class="controller controller-nav" id="btRB"></span>
+          <ul id="dropdown5" class="dropdown-content">
+            <li><a href="#!" class="black-text text">Lista Produtos</a></li>
+            <li><a href="#!" class="black-text text">Cadastrar Produtos</a></li>
+          </ul>
+          <a class="white btn dropdown-button" href="#!" data-activates="dropdown4">Clientes<i class= "mdi-navigation-expand-more right"></i></a>
+          <a class="white btn dropdown-button" href="#!" data-activates="dropdown5">Produtos<i class= "mdi-navigation-expand-more right"></i></a> 
+        </ul>
+      </div>
+    </nav>
+
 	<div>
 
   <div class="parallax-container">
@@ -48,7 +69,7 @@
     <div class="parallax"><img src="images/imeg2.jpg"></div>
   </div>
 
-		<h1>Cleiago Comics</h1>
+		
 		<?php 
 			if(isset($_SESSION["login"])){
 				echo "<p><a href=\"cadClientes.php\"><button>Cadastrar Clientes</button></a></p>";
@@ -78,16 +99,12 @@
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                <h5 class="white-text">CLEIAGO COMICS</h5>
               </div>
               <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
                 <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                  <li><a class="grey-text text-lighten-3" target="_blank" href="kombiweb.github.io">Quem somos?</a></li>
+                  <li><a class="grey-text text-lighten-3" target="_blank" href="www.google.com.br">Do que sobrevivemos?</a></li>
                 </ul>
               </div>
             </div>
@@ -95,7 +112,6 @@
           <div class="footer-copyright">
             <div class="container">
             © 2014 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
             </div>
           </div>
         </footer>
@@ -107,7 +123,14 @@
     });
     
     
-      $(".dropdown-button").dropdown();
+    
+      console.debug($(".dropdown-button").dropdown());
+      $('.button-collapse').sideNav({
+      menuWidth: 300, // Default is 240
+      edge: 'left', // Choose the horizontal origin
+      closeOnClick: false // Closes side-nav on <a> clicks, useful for Angular/Meteor
+    }
+  );
       
 
 
