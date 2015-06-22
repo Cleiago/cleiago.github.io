@@ -7,7 +7,30 @@
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>      
 	<title>Login</title>
 </head>
+<<<<<<< HEAD
 <body class="fundo">
+=======
+<body>
+	<?php 
+	if(isset($_SESSION["login"])){
+		echo "<p>Usuário Conectado</p>";
+		if(isset($_GET['url'])){
+			echo "<meta http-equiv=\"refresh\" content=\"1; url=".$_GET['url']."\">";
+		}else{
+			echo "<meta http-equiv=\"refresh\" content=\"0; url=index.php\">";
+		}
+	}else if(isset($_POST["submit"])){
+		require_once 'fcnsdb.php';
+		require_once 'logindb.php';
+		$banco = conectadb($dbHostname, $dbUsername, $dbPassword);
+
+		selectdb($banco, $dbDatabase);
+
+		$login = $_POST["login"];
+		$senha = $_POST["pass"];
+		$query = "SELECT name FROM user WHERE login ='".$login."' AND password ='".$senha."'";
+		$resultado = query($banco, $query);
+>>>>>>> bccc1116ee2bdb609ad92c1afe76dc738311f23c
 
 	<nav>
    		<div class="nav-wrapper">

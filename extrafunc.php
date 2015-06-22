@@ -1,14 +1,19 @@
+<head>
+	<meta charset='UTF-8'>
+</head>
+
 <?php 
 	function PrintTable($result){     
 		if (@mysqli_num_rows($result) == 0){ 
 			echo("<b>Query completed. No results returned.</b><br>"); 
 		}else { 
-			echo "<table border='1'> 
+			echo "<table border='1' class='tablesorter'> 
 				<thead> 
 				<tr>"; 
 			for($i = 0;$i < mysqli_num_fields($result);$i++) 
 			{ 
-				echo "<th>" . mysqli_fetch_field($result)->name . "</th>"; 
+				$name = mysqli_fetch_field($result)->name;
+				echo "<th id='".$name."'>" . $name . "</th>"; 
 			}
 			echo "</tr> 
 				</thead> 
