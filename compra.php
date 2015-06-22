@@ -3,10 +3,10 @@
 <html>
 <head>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	<title>Compra</title>
-	<meta charset='UTF-8'>
 	<link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css" rel="stylesheet" />
 	<script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
+	<title>Compra</title>
+	<meta charset='UTF-8'>
 </head>
 <body>
 	<h3>Compra</h3>
@@ -78,6 +78,10 @@
 		$(document).ready(function() {
 			$("#pcodp").select2();
 			$("#ccpf").select2();
+
+			$(document).on("focus", ".select2", function () {
+				$(this).prev().select2('open');
+			});
 		});
 	</script>
 </body>

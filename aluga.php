@@ -7,6 +7,17 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
 	<title>Empréstimo</title>
 	<meta charset='UTF-8'>
+	<script type="text/javascript">
+		$(document).ready(function () {
+			
+			$("#pcodp").select2();
+			$("#ccpf").select2();
+
+			$(document).on("focus", ".select2", function () {
+				$(this).prev().select2('open');
+			});
+		})
+	</script>
 </head>
 <body>
 	<h3>Empréstimo</h3>
@@ -16,6 +27,7 @@
 
 		}else{
 			echo "<meta http-equiv=\"refresh\" content=\"0; url=authentication.php?url=aluga.php\">";
+			exit;
 		}
 		
 		require_once 'extrafunc.php';
@@ -46,15 +58,15 @@
 	
 	<form name='aluga' method='post'>
 		<p>
-			<label for='pcodp'>Codigo do Produto:</label>
-			<select name='pcodp' id='pcodp' style='width: 150px' required>";
-			<?php SelectValues($productOptions); ?>
-			</select>
-		</p>
-		<p>
 			<label for='ccpf'>CPF do Cliente:</label>
 			<select name='ccpf' id='ccpf' style='width: 150px' required>";
 				<?php SelectValues($clientOptions); ?>
+			</select>
+		</p>
+		<p>
+			<label for='pcodp'>Codigo do Produto:</label>
+			<select name='pcodp' id='pcodp' style='width: 150px' required>";
+				<?php SelectValues($productOptions); ?>
 			</select>
 		</p>
 		<p>
@@ -72,11 +84,5 @@
 		}
 	?>
 
-	<script type="text/javascript">
-		$(document).ready(function () {
-			$("#pcodp").select2();
-			$("#ccpf").select2();
-		})
-	</script>
 </body>
 </html>
