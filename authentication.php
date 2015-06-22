@@ -7,10 +7,7 @@
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>      
 	<title>Login</title>
 </head>
-<<<<<<< HEAD
-<body class="fundo">
-=======
-<body>
+	<body >
 	<?php 
 	if(isset($_SESSION["login"])){
 		echo "<p>Usuário Conectado</p>";
@@ -30,7 +27,7 @@
 		$senha = $_POST["pass"];
 		$query = "SELECT name FROM user WHERE login ='".$login."' AND password ='".$senha."'";
 		$resultado = query($banco, $query);
->>>>>>> bccc1116ee2bdb609ad92c1afe76dc738311f23c
+		?>
 
 	<nav>
    		<div class="nav-wrapper">
@@ -94,27 +91,10 @@
 		}
 		?>
 	</div>
-	</div>
+	
 	
 		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       	<script type="text/javascript" src="js/materialize.min.js"></script>
-      	 <script type="text/javascript">
-    $(document).ready(function(){
-      $('.parallax').parallax();
-    });
-    
-    
-    
-      console.debug($(".dropdown-button").dropdown());
-      $('.button-collapse').sideNav({
-      menuWidth: 300, // Default is 240
-      edge: 'left', // Choose the horizontal origin
-      closeOnClick: false // Closes side-nav on <a> clicks, useful for Angular/Meteor
-    }
-  );
-      
-
-
-  </script>
-</body>
+      	 <script type="text/javascript" src="JavaScript.js"></script>
+	</body>
 </html>
