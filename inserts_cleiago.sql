@@ -14,21 +14,21 @@ INSERT INTO cleiago.cliente VALUES
 	;
 
 INSERT INTO cleiago.produto VALUES
-	(1,'O Senhor dos Anéis: A Sociedade do Anel','Fantasia',17,2000,52.90,21.80,'Ótimo'),
-	(2,'O Senhor dos Anéis: A Sociedade do Anel','Fantasia',17,2000,52.90,21.80,'Bom'),
-	(3,'O Senhor dos Anéis: A Sociedade do Anel','Fantasia',17,2000,52.90,21.80,'Ótimo'),
-	(4,'O Senhor dos Anéis: A Sociedade do Anel','Fantasia',17,2000,52.90,21.80,'Regular'),
-	(5,'O Senhor dos Anéis: A Sociedade do Anel','Fantasia',17,2000,52.90,21.80,'Ótimo'),
-	(6,'O Senhor dos Anéis: As Duas Torres','Fantasia',17,2002,52.90,21.80,'Bom'),
-	(7,'O Senhor dos Anéis: As Duas Torres','Fantasia',17,2002,52.90,21.80,'Ótimo'),
-	(8,'O Senhor dos Anéis: As Duas Torres','Fantasia',17,2002,52.90,21.80,'Bom'),
-	(9,'O Senhor dos Anéis: As Duas Torres','Fantasia',17,2002,52.90,21.80,'Bom'),
-	(10,'O Senhor dos Anéis: As Duas Torres','Fantasia',17,2002,52.90,21.80,'Ótimo'),
-	(11,'O Senhor dos Anéis: O Retorno do Rei','Fantasia',17,2000,52.90,21.80,'Ótimo'),
-	(12,'O Senhor dos Anéis: O Retorno do Rei','Fantasia',17,2000,52.90,21.80,'Regular'),
-	(13,'O Senhor dos Anéis: O Retorno do Rei','Fantasia',17,2000,52.90,21.80,'Ótimo'),
-	(14,'O Senhor dos Anéis: O Retorno do Rei','Fantasia',17,2000,52.90,21.80,'Bom'),
-	(15,'O Senhor dos Anéis: O Retorno do Rei','Fantasia',17,2000,52.90,21.80,'Bom')
+	(1,'O Senhor dos Anéis: A Sociedade do Anel','Fantasia',16,2000,52.90,21.80,'Ótimo'),
+	(2,'O Senhor dos Anéis: A Sociedade do Anel','Fantasia',16,2000,52.90,21.80,'Bom'),
+	(3,'O Senhor dos Anéis: A Sociedade do Anel','Fantasia',16,2000,52.90,21.80,'Ótimo'),
+	(4,'O Senhor dos Anéis: A Sociedade do Anel','Fantasia',16,2000,52.90,21.80,'Regular'),
+	(5,'O Senhor dos Anéis: A Sociedade do Anel','Fantasia',16,2000,52.90,21.80,'Ótimo'),
+	(6,'O Senhor dos Anéis: As Duas Torres','Fantasia',16,2002,52.90,21.80,'Bom'),
+	(7,'O Senhor dos Anéis: As Duas Torres','Fantasia',16,2002,52.90,21.80,'Ótimo'),
+	(8,'O Senhor dos Anéis: As Duas Torres','Fantasia',16,2002,52.90,21.80,'Bom'),
+	(9,'O Senhor dos Anéis: As Duas Torres','Fantasia',16,2002,52.90,21.80,'Bom'),
+	(10,'O Senhor dos Anéis: As Duas Torres','Fantasia',16,2002,52.90,21.80,'Ótimo'),
+	(11,'O Senhor dos Anéis: O Retorno do Rei','Fantasia',16,2000,52.90,21.80,'Ótimo'),
+	(12,'O Senhor dos Anéis: O Retorno do Rei','Fantasia',16,2000,52.90,21.80,'Regular'),
+	(13,'O Senhor dos Anéis: O Retorno do Rei','Fantasia',16,2000,52.90,21.80,'Ótimo'),
+	(14,'O Senhor dos Anéis: O Retorno do Rei','Fantasia',16,2000,52.90,21.80,'Bom'),
+	(15,'O Senhor dos Anéis: O Retorno do Rei','Fantasia',16,2000,52.90,21.80,'Bom')
 	;
 
 INSERT INTO cleiago.livro VALUES

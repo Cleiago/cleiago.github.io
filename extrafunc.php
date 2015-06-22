@@ -5,7 +5,7 @@
 <?php 
 	function PrintTable($result){     
 		if (@mysqli_num_rows($result) == 0){ 
-			echo("<b>Query completed. No results returned.</b><br>"); 
+			echo("<b>Nenhum resultado retornado.</b><br>"); 
 		}else { 
 			echo "<table border='1' class='tablesorter'> 
 				<thead> 

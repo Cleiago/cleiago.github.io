@@ -4,8 +4,6 @@
 <head>
 	<title>Cadastro de Clientes</title>
 	<meta charset='UTF-8'>
-	<?php 
-	?>
 </head>
 <body>
 	<h3>Cadastro de Novo Cliente</h3>
@@ -40,7 +38,7 @@
 		}
 		?>
 
-		<form name='cadastro' method='post'>
+		<form name='cadastro' method='post' accept-charset="utf-8">
 			<p>
 				<label for='cpf'>CPF: (apenas números)</label>
 				<input type='text' id='cpf' name='cpf' size='11' maxlength='11' required pattern='\d{11}'>

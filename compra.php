@@ -46,7 +46,7 @@
 		}
 	?>
 
-	<form name='compra' method='post' action='compra.php'>
+	<form name='compra' method='post' action='compra.php' accept-charset="utf-8">
 		<p>
 			<label for='pcodp'>Codigo do Produto:</label>
 			<select name='pcodp' id='pcodp' style='width: 150px' required>";

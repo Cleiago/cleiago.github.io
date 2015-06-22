@@ -56,7 +56,7 @@
 		}
 	?>
 	
-	<form name='aluga' method='post'>
+	<form name='aluga' method='post' accept-charset="utf-8">
 		<p>
 			<label for='ccpf'>CPF do Cliente:</label>
 			<select name='ccpf' id='ccpf' style='width: 150px' required>";

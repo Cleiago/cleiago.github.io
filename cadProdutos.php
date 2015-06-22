@@ -13,6 +13,7 @@
 			if(document.getElementById('lv').checked){
 				document.getElementById('lvFields').style.display='block';
 				document.getElementById('vgFields').style.display='none';
+				
 				document.getElementById('isbn').required = true;
 				document.getElementById('autor').required = true;
 				document.getElementById('desenvolv').required = false;
@@ -20,6 +21,7 @@
 			}else if(document.getElementById('vg').checked){
 				document.getElementById('vgFields').style.display='block';
 				document.getElementById('lvFields').style.display='none';
+
 				document.getElementById('desenvolv').required = true;
 				document.getElementById('console').required = true;
 				document.getElementById('isbn').required = false;
@@ -27,10 +29,32 @@
 			}
 		}
 
+		function formatclass (classet) {
+			if (!classet.id) { return classet.text; }
+			var $classet = $(
+				'<span><img src="./img/class' + classet.element.value + '.png" class="img-flag" /></spam>'
+			);
+			return $classet;
+		};
+
 		$(document).ready(function() {
 			$('#estfisico').select2();
+
+			$("#classet").select2({
+				templateResult: formatclass
+			});
+
+			$(document).on("focus", ".select2", function () {
+				$(this).prev().select2('open');
+			});
 		})
 	</script>
+	<style type="text/css">
+		img{
+			height: 30px;
+			width: 30px;
+		}
+	</style>
 
 </head>
 <body>
@@ -89,9 +113,9 @@
 	}
 	?>
 	
-	<form name='cadastro' method='post'>
+	<form name='cadastro' method='post' accept-charset="utf-8">
 		<p>
-			<label for='titulo'>Titulo:</label>
+			<label for='titulo'>Título:</label>
 			<input type='text' id='titulo' name='titulo' size='70' maxlength='70' required>
 		</p>
 		<p>
@@ -99,9 +123,15 @@
 			<input type='text' id='genero' name='genero' size='20' maxlength='20' required>
 		</p>
 		<p>
-			<label for='classet'>Classificação etária:</label>
-			<input type='text' id='classet' name='classet'required>
-			<!--transformar em select-->
+			<label for='classet'>Classificação Etária:</label>
+			<select id='classet' name='classet' required>
+				<option value='0'>Livre</option>
+				<option value='10'>Proibido para menores de 10 anos.</option>
+				<option value='12'>Proibido para menores de 12 anos.</option>
+				<option value='14'>Proibido para menores de 14 anos.</option>
+				<option value='16'>Proibido para menores de 16 anos.</option>
+				<option value='18'>Proibido para menores de 18 anos.</option>
+			</select>
 		</p>
 		<p>
 			<label for='ano'>Ano de Publicação:</label>
@@ -118,12 +148,12 @@
 		<p>
 			<label for='estfisico'>Qualidade do produto:</label>
 			<select id='estfisico' name='estfisico' required>
-				<option disabled selected>... escolha ...</option>
-				<option value='Ótimo'>Ótimo</option>
+				<option disabled selected>Selecione...</option>
+				<option value='Otimo'>Ótimo</option>
 				<option value='Bom'>Bom</option>
 				<option value='Regular'>Regular</option>
 				<option value='Ruim'>Ruim</option>
-				<option value='Péssimo'>Péssimo</option>
+				<option value='Pessimo'>Péssimo</option>
 			</select>
 		</p>
 		<p>
@@ -132,7 +162,7 @@
 				<input type='radio' name='tipo' id='lv' value='lv' onclick='changeFields()' required>Livro
 			</label>
 			<label>
-				<input type='radio' name='tipo' id='vg' value='vg' onclick='changeFields()' required>Video Game
+				<input type='radio' name='tipo' id='vg' value='vg' onclick='changeFields()' required>Videogame
 			</label>
 		</p>
 		<div id='lvFields' style='display:none'>
@@ -147,7 +177,7 @@
 		</div>
 		<div id='vgFields' style='display:none'>
 		<p>
-			<label for='desenv'>Desenvolvedora:</label>
+			<label for='desenv'>Desenvolvedor:</label>
 			<input type='text' class='vg' id='desenv' name='desenv' size='20' maxlength='20'>
 		</p>
 		<p>
