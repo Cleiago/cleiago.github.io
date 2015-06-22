@@ -4,7 +4,19 @@
 <head>
 	<title>Cadastro de Clientes</title>
 	<meta charset='UTF-8'>
+	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  	<link rel="stylesheet" href="mainCSS.css">
+
 </head>
+
+<body class="fundo">
+  </div class="white container">
+    <div class="white row container">
+      <h2 class="header">CLEIAGO COMICS</h2>
+      <p class="grey-text text-darken-3 lighten-3">Cadastrar novo Cliente:</p>
+
+      <a href="index.php"><button>Home</button></a>s
 <body>
 	<h3>Cadastro de Novo Cliente</h3>
 	<a href="index.php"><button>Home</button></a>
@@ -84,6 +96,37 @@
 			}
 		}
 	?>
+
+
+
+
+    </div>
+  </div>
+ 
+
+	 <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">CLEIAGO COMICS</h5>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <ul>
+                  <li><a class="grey-text text-lighten-3" target="_blank" href="kombiweb.github.io">Quem somos?</a></li>
+                  <li><a class="grey-text text-lighten-3" target="_blank" href="www.google.com.br">Do que sobrevivemos?</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2014 Copyright Text
+            </div>
+          </div>
+        </footer>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script type="text/javascript" src="JavaScript.js"></script>
 
 </body>
 </html>
