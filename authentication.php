@@ -7,7 +7,7 @@
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>      
 	<title>Login</title>
 </head>
-	<body >
+<body >
 	<?php 
 	if(isset($_SESSION["login"])){
 		echo "<p>Usuário Conectado</p>";
@@ -95,6 +95,6 @@
 	
 		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       	<script type="text/javascript" src="js/materialize.min.js"></script>
-      	 <script type="text/javascript" src="JavaScript.js"></script>
+      	<script type="text/javascript" src="JavaScript.js"></script>
 	</body>
 </html>

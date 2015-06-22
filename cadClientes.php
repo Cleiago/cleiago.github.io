@@ -5,12 +5,12 @@
 	<title>Cadastro de Clientes</title>
 	<meta charset='UTF-8'>
 	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-  <link rel="stylesheet" href="mainCSS.css">
+  	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+  	<link rel="stylesheet" href="mainCSS.css">
 	<?php 
 	?>
 </head>
-<<<<<<< HEAD
+
 <body class="fundo">
   </div class="white container">
     <div class="white row container">
@@ -22,7 +22,6 @@
 <body>
 	<h3>Cadastro de Novo Cliente</h3>
 	<a href="index.php"><button>Home</button></a>
->>>>>>> bccc1116ee2bdb609ad92c1afe76dc738311f23c
 		<?php 
 		if(isset($_SESSION["login"])){
 			
