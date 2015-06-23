@@ -28,18 +28,18 @@
 			<ul id="nav-mobile" class="light hide-on-med-and-down">
 				<span class="controller controller-nav" id="btRB"></span>
 				<ul id="dropdown2" class="dropdown-content">
-					<li><a href=\"cadClientes.php\" class=\"black-text text\">Cadastrar Clientes</a></li>
-					<li><a href=\"verClientes.php\" class=\"black-text text\">Lista Clientes</a></li>
+					<li><a href="cadClientes.php" class="black-text text">Cadastrar Clientes</a></li>
+					<li><a href="verClientes.php" class="black-text text">Lista Clientes</a></li>
 				</ul>
 				<span class="controller controller-nav" id="btRB"></span>
 				<ul id="dropdown3" class="dropdown-content">
-					<li><a href=\"verProdutos.php\" class=\"black-text text\">Lista Produtos</a></li>
-					<li><a href=\"cadProdutos.php\" class=\"black-text text\">Cadastrar Produtos</a></li>
+					<li><a href="verProdutos.php" class="black-text text">Lista Produtos</a></li>
+					<li><a href="cadProdutos.php" class="black-text text">Cadastrar Produtos</a></li>
 				</ul>
 				<ul id="dropdown6" class="dropdown-content">
-					<li><a href=\"aluga.php\" class=\"black-text text\">Empréstimo</a></li>
-					<li><a href=\"devolucao.php\" class=\"black-text text\">Devolução</a></li>
-					<li><a href=\"compra.php\" class=\"black-text text\">Compra</a></li>
+					<li><a href="aluga.php" class="black-text text">Empréstimo</a></li>
+					<li><a href="devolucao.php" class="black-text text">Devolução</a></li>
+					<li><a href="compra.php" class="black-text text">Compra</a></li>
 				</ul>
 				<a class="red lighten-2 btn dropdown-button" href="#!" data-activates="dropdown2">Clientes<i class= "mdi-navigation-expand-more right"></i></a>
 				<a class="red lighten-2 btn dropdown-button" href="#!" data-activates="dropdown3">Produtos<i class= "mdi-navigation-expand-more right"></i></a>
@@ -50,19 +50,19 @@
 			<ul id="mobile-sidenav" class="side-nav">
 				<span class="controller controller-nav" id="btRB"></span>
 				<ul id="dropdown4" class="dropdown-content">
-					<li><a href=\"cadClientes.php\" class=\"black-text text\">Cadastrar Clientes</a></li>
-					<li><a href=\"verClientes.php\" class=\"black-text text\">Lista Clientes</a></li>
+					<li><a href="cadClientes.php" class="black-text text">Cadastrar Clientes</a></li>
+					<li><a href="verClientes.php" class="black-text text">Lista Clientes</a></li>
 				</ul>
 				<span class="controller controller-nav" id="btRB"></span>
 				<ul id="dropdown5" class="dropdown-content">
-					<li><a href=\"cadProdutos.php\" class=\"black-text text\">Lista Produtos</a></li>
-					<li><a href=\"verProdutos.php\" class=\"black-text text\">Cadastrar Produtos</a></li>
+					<li><a href="cadProdutos.php" class="black-text text">Lista Produtos</a></li>
+					<li><a href="verProdutos.php" class="black-text text">Cadastrar Produtos</a></li>
 				</ul>
 				<span class="controller controller-nav" id="btRB"></span>
 				<ul id="dropdown7" class="dropdown-content">
-					<li><a href=\"aluga.php\" class=\"black-text text\">Lista Produtos</a></li>
-					<li><a href=\"devolucao.php\" class=\"black-text text\">Cadastrar Produtos</a></li>
-					<li><a href=\"compra.php\" class=\"black-text text\">Cadastrar Produtos</a></li>
+					<li><a href="aluga.php" class="black-text text">Lista Produtos</a></li>
+					<li><a href="devolucao.php" class="black-text text">Cadastrar Produtos</a></li>
+					<li><a href="compra.php" class="black-text text">Cadastrar Produtos</a></li>
 				</ul>
 				<a class="white btn dropdown-button" href="#!" data-activates="dropdown4">Clientes<i class= "mdi-navigation-expand-more right"></i></a>
 				<a class="white btn dropdown-button" href="#!" data-activates="dropdown5">Produtos<i class= "mdi-navigation-expand-more right"></i></a>
