@@ -2,10 +2,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<title>Login</title>
+	<meta charset='UTF-8'>
 	<link rel="stylesheet" type="text/css" href="mainCSS.css ">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css">
-  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>      
-	<title>Login</title>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>     
 </head>
 <body class="fundo">
 	<?php 
@@ -38,7 +39,7 @@
       		</ul>
     	</div>
   	</nav>
-		<div class=" row container">
+		<div class="bg-transparent container">
 		<?php 
 		if(isset($_SESSION["login"])){
 			echo "<p>Usuário Conectado</p>";
@@ -88,7 +89,7 @@
 		}
 
 		if(isset($_GET["user"])){
-			echo "<p>Login e/ou senha inválidos</p>";
+			echo "<p class= \"white-text text-darken-2\">Login e/ou senha inválidos</p>";
 		}
 		?>
 	</div>

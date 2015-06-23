@@ -4,26 +4,35 @@
 <head>
 	<title>Cadastro de Clientes</title>
 	<meta charset='UTF-8'>
-	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+	<link rel="stylesheet" type="text/css" href="mainCSS.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css">
+	<link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
   	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
-  	<link rel="stylesheet" href="mainCSS.css">
-
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>
 </head>
-
 <body class="fundo">
-  </div class="white container">
-    <div class="white row container">
-      <h2 class="header">CLEIAGO COMICS</h2>
-      <p class="grey-text text-darken-3 lighten-3">Cadastrar novo Cliente:</p>
 
-      <a href="index.php"><button>Home</button></a>s
-<body>
-	<h3>Cadastro de Novo Cliente</h3>
-	<a href="index.php"><button>Home</button></a>
+	<nav>
+      <div class="nav-wrapper">
+      <a href="#" data-activates="mobile-sidenav" class="button-collapse"><i class="mdi-navigation-menu"></i><span class="controller controller-nav-mobile" id="btRB"></span></a>
+        <a class="brand-logo right" href="/">CLEIAGO</a>
+        <ul id="nav-mobile" class="light hide-on-med-and-down">
+          <a class="red lighten-2 btn" href="logout.php">Logout</a>
+          <a class="red lighten-2 btn" href="index.php">Home</a>
+        </ul>
+        <!--Mobile-->
+        <ul id="mobile-sidenav" class="side-nav">
+          <a class="white btn" href="logout.php">Logout</a>
+          <a class="white btn" href="index.php">Home</a> 
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container bg-transparent">
+      <h2 class="header">CLEIAGO COMICS</h2>
+      <p class="black-text text-darken-3 lighten-3">Cadastrar novo Cliente:</p>
 		<?php 
-		if(isset($_SESSION["login"])){
-			
-		}else{
+		if(! isset($_SESSION["login"])){
 			echo "<meta http-equiv=\"refresh\" content=\"0; url=authentication.php?url=cadClientes.php\">";
 			exit;
 		}
@@ -52,38 +61,40 @@
 
 		<form name='cadastro' method='post' accept-charset="utf-8">
 			<p>
-				<label for='cpf'>CPF: (apenas números)</label>
+				<label class= "black-text text-darken-2" for='cpf'>CPF: (apenas números)</label>
 				<input type='text' id='cpf' name='cpf' size='11' maxlength='11' required pattern='\d{11}'>
 			</p>
 			<p>
-				<label for='nome'>Nome:</label>
+				<label class= "black-text text-darken-2" for='nome'>Nome:</label>
 				<input type='text' id='nome' name='nome' size='30' maxlength='30' required>
 			</p>
 			<p>
-				<label for='dtnasc'>Data de Nascimento:</label>
+				<label class= "black-text text-darken-2" for='dtnasc'>Data de Nascimento:</label>
 				<input type='date' id='dtnasc' name='dtnasc' required>
 			</p>
 			<p>
-				<label for='ender'>Endereço:</label>
+				<label class= "black-text text-darken-2" for='ender'>Endereço:</label>
 				<input type='text' id='ender' name='ender' size='50' maxlength='50' required>
 			</p>
 			<p>
-				<label for='cidade'>Cidade:</label>
+				<label class= "black-text text-darken-2" for='cidade'>Cidade:</label>
 				<input type='text' id='cidade' name='cidade' size='30' maxlength='30' required>
 			</p>
 			<p>
-				<label for='uf'>Estado:</label>
+				<label class= "black-text text-darken-2" for='uf'>Estado:</label>
 				<input type='text' id='uf' name='uf' size='2' maxlength='2' oninput='toUpperCase(this)' required>
 			</p>
 			<p>
-				<label for='tel1'>Telefone:</label>
+				<label class= "black-text text-darken-2" for='tel1'>Telefone:</label>
 				<input type='text' id='tel1' name='tel1' size='15' maxlength='15' required>
 			</p>
 			<p>
-				<label for='tel2'>Telefone:</label>
+				<label class= "black-text text-darken-2" for='tel2'>Telefone:</label>
 				<input type='text' id='tel2' name='tel2' size='15' maxlength='15' onfocus='if(this.value=="")this.value=null'>
 			</p>
-			<input type='submit' name='submit' value='Cadastrar'>
+			<button class="red lighten-2 btn waves-effect waves-light" type="submit" name="submit" value="Cadastrar">Submit
+    			<i class="mdi-content-send right"></i>
+  			</button>
 		</form>
 
 		<?php 
