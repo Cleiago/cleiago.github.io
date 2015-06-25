@@ -2,11 +2,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<title>Cadastro de Produtos</title>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<link href="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/css/select2.min.css" rel="stylesheet" />
 	<script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
-	<title>Cadastro de Produtos</title>
 	<meta charset='UTF-8'>
+	<link rel="stylesheet" type="text/css" href="mainCSS.css ">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css">
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>     
 	
 	<script type="text/javascript">
 		function changeFields(){
