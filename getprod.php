@@ -9,7 +9,7 @@
 		$ccpf = $_GET["ccpf"];
 
 		echo $ccpf;
-		$query = "SELECT produto_codp FROM aluga WHERE cliente_cpf='$ccpf' AND dtdev IS NULL GROUP BY 1";
+		$query = "SELECT codp FROM aluga WHERE cpf='$ccpf' AND dtdev IS NULL GROUP BY 1";
 		$productOptions = query($banco,$query);
 
 		SelectValues($productOptions);

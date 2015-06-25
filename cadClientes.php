@@ -4,6 +4,7 @@
 <head>
 	<title>Cadastro de Clientes</title>
 	<meta charset='UTF-8'>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="mainCSS.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css">
 	<link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
@@ -70,7 +71,7 @@
 			</p>
 			<p>
 				<label class= "black-text text-darken-2" for='dtnasc'>Data de Nascimento:</label>
-				<input type='date' id='dtnasc' name='dtnasc' required>
+				<input type='date' id='dtnasc' name='dtnasc' class='datepicker' required>
 			</p>
 			<p>
 				<label class= "black-text text-darken-2" for='ender'>Endereço:</label>
@@ -104,8 +105,8 @@
 				echo "<p>Cliente Cadastrado!</p>";
 				$query = "SELECT * FROM cliente WHERE cpf='$cpf'";
 				PrintTable(query($banco,$query));
-			}
-		}
+			};
+		};
 		?>
 
 	</div>
@@ -129,9 +130,25 @@
 			</div>
 		</div>
 	</footer>
-	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script type="text/javascript" src="js/materialize.min.js"></script>
 	<script type="text/javascript" src="JavaScript.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#cpf").text('CPF');
+			$("#nome").text('Nome');
+			$("#dtnasc").text('Data de Nascimento');
+			$("#ender").text('Endereço');
+			$("#cidade").text('Cidade');
+			$("#uf").text('UF');
+			$("#tel1").text('Telefone');
+			$("#tel2").text('Celular');
+
+			 $('.datepicker').pickadate({
+			    selectMonths: true, // Creates a dropdown to control month
+			    selectYears: 100 // Creates a dropdown of 15 years to control year
+			  });
+		});
+	</script>
 
 </body>
 </html>

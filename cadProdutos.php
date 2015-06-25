@@ -15,19 +15,20 @@
 	<script type="text/javascript">
 
 		function changeFields(){
-			if($('#lv').is(":checked")) {
+			if($('#lvcheck').is(":checked")) {
 				$('.vginput').attr("required",false);
 				$('.vgFields').hide();
 				
 				$('.lvFields').show();
 				$('.lvinput').attr("required",true);
-			}else if(document.getElementById('vg').checked){
+			}else if($('#vgcheck').is(":checked")){
 				$('.lvinput').attr("required",false);
 				$('.lvFields').hide();
 
 				$('.vgFields').show();
 				$('.vginput').attr("required",true);
 			}
+		};
 
 		function formatclass (classet) {
 			if (!classet.id) { return classet.text; }
@@ -85,7 +86,6 @@
 		</div>
 	</nav>
 
-	<h3>Cadastro de Novo Produto</h3>
 
 	<?php 
 	if(isset($_SESSION["login"])){
@@ -159,16 +159,16 @@
 	}
 	?>
 	<div class="bg-transparent container">
+	<h2 class='header'>Cadastro de Novo Produto</h2>
 
 	<form name='cadastro' method='post' accept-charset="utf-8">
 		<p>
 			<label class="black-text text-darken-2" for='tipo'>Tipo:</label>
-			<label class="black-text text-darken-2">
-				<a class="red lighten-2 waves-effect waves-teal btn"  name='tipo' id='lv' value='lv' onclick='changeFields()' required>HQ</a>
-			</label>
-			<label class="black-text text-darken-2">
-				<a class="red lighten-2 waves-effect waves-teal btn" name='tipo' id='vg' value='vg' onclick='changeFields()' required>Videogame</a>
-			</label>
+			<input class='with-gap' type='radio' name='tipo' id='lvcheck' value='lv' onclick='changeFields()' required>
+			<label class="black-text text-darken-2" for='lvcheck'>Livro / HQ</label>
+
+			<input class='with-gap' type='radio' name='tipo' id='vgcheck' value='vg' onclick='changeFields()' required>
+			<label class="black-text text-darken-2" for='vgcheck'>Videogame</label>
 		</p>
 		<div class='lvFields' style='display:none'>
 			<p>
@@ -178,7 +178,7 @@
 		</div>
 		<div class='vgFields' style='display:none'>
 			<p>
-				<label for='vgid'>Videogame ID:</label>
+				<label class="black-text text-darken-2" for='vgid'>Videogame ID:</label>
 				<input type='text' class='vginput' id='vgid' name='vgid'>
 			</p>
 		</div>
@@ -203,9 +203,10 @@
 			<input class= "black-text text-darken-2" type='text' id='genero' name='genero' size='20' maxlength='20' required>
 		</p>
 		<div class="black-text text-darken-2 input-field col s6">
-			<label for='classet'>Classificação Etária:</label>
+			<!--<label for='classet'>Classificação Etária:</label>-->
 			
 				<select id='classet' name='classet' required class="select-custom">
+					<option disabled selected>Classificação Etária</option>
 					<option value='0'>Livre</option>
 					<option value='10'>Proibido para menores de 10 anos.</option>
 					<option value='12'>Proibido para menores de 12 anos.</option>
@@ -217,15 +218,15 @@
 		</div>
 		<p>
 			<label class= "black-text text-darken-2" for='ano'>Ano de Publicação:</label>
-			<input class= "black-text text-darken-2" type='year' id='ano' name='ano' required>
+			<input class= "black-text text-darken-2" type='text' id='ano' name='ano' required>
 		</p>
-		<div class='lvfields' style='display:none'>
+		<div class='lvFields' style='display:none'>
 			<p>
-				<label for='editora'>Editora:</label>
+				<label class="black-text text-darken-2" for='editora'>Editora:</label>
 				<input type='text' id='editora' name='editora' size='30' maxlength='30'>
 			</p>
 			<p>
-				<label for='edicao'>Edição:</label>
+				<label class="black-text text-darken-2" for='edicao'>Edição:</label>
 				<input type='text' id='edicao' name='edicao'>
 			</p>
 		</div>
@@ -244,9 +245,9 @@
 			<input class= "black-text text-darken-2" type='text' id='vlaluga' name='vlaluga' required>
 		</p>
 		<div class="black-text text-darken-2 input-field col s6">
-			<label for='estfisico'>Qualidade do produto:</label>
+			<!--<label for='estfisico'>Qualidade do produto:</label>-->
 			<select id='estfisico' name='estfisico' required class="select-custom">
-				<option disabled selected>Selecione...</option>
+				<option disabled selected>Qualidade do Produto</option>
 				<option value='Otimo'>Ótimo</option>
 				<option value='Bom'>Bom</option>
 				<option value='Regular'>Regular</option>

@@ -7,7 +7,7 @@
 		if (@mysqli_num_rows($result) == 0){ 
 			echo("<b>Nenhum resultado retornado.</b><br>"); 
 		}else { 
-			echo "<table border='1' class='tablesorter'> 
+			echo "<table border='1' class='tablesorter striped'> 
 				<thead> 
 				<tr>"; 
 			for($i = 0;$i < mysqli_num_fields($result);$i++) 

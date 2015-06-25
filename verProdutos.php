@@ -58,8 +58,7 @@
 	</nav>
 
 	<div class="container bg-transparent">
-	<h2 class="header">CLEIAGO COMICS</h2>
-		<p class="black-text text-darken-3 lighten-3">Lista de Clientes:</p>
+	<h2 class="header">Lista de Produtos</h2>
 	<br>
 	<?php 
 	if(isset($_SESSION["login"])){
