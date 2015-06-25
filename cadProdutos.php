@@ -35,7 +35,7 @@
 		function formatclass (classet) {
 			if (!classet.id) { return classet.text; }
 			var $classet = $(
-				'<span><img src="./img/class' + classet.element.value + '.png" class="img-flag" /></spam>'
+				'<span><img src="./images/class' + classet.element.value + '.png" class="img-flag" /></spam>'
 			);
 			return $classet;
 		};
