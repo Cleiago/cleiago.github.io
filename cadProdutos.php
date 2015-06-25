@@ -175,10 +175,10 @@
 		<p>
 			<label class="black-text text-darken-2" for='tipo'>Tipo:</label>
 			<label class="black-text text-darken-2">
-				<a class="waves-effect waves-teal btn"  name='tipo' id='lv' value='lv' onclick='changeFields()' required>HQ</a>
+				<a class="red lighten-2 waves-effect waves-teal btn"  name='tipo' id='lv' value='lv' onclick='changeFields()' required>HQ</a>
 			</label>
 			<label class="black-text text-darken-2">
-				<a class="waves-effect waves-teal btn" name='tipo' id='vg' value='vg' onclick='changeFields()' required>Videogame</a>
+				<a class="red lighten-2 waves-effect waves-teal btn" name='tipo' id='vg' value='vg' onclick='changeFields()' required>Videogame</a>
 			</label>
 		</p>
 		<div id='lvFields' style='display:none'>
@@ -201,8 +201,8 @@
 			<input class="black-text text-darken-2" type='text' class='vg' id='console' name='console' size='20' maxlength='20'>
 		</p>
 		</div>
-		<button class="btn waves-effect waves-light" type="submit" name="submit" value="cadastrar">Submit
-   			<i class="material-icons">send</i>
+		<button class="red lighten-2 btn waves-effect waves-light" type="submit" name="submit" value="cadastrar">Submit
+   			<i class="mdi-content-send right"></i>
   		</button>
 		
 	</form>
@@ -222,6 +222,26 @@
 	}
 	?>
 </div>
+<footer class="page-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col l6 s12">
+					<h5 class="white-text">CLEIAGO COMICS</h5>
+				</div>
+				<div class="col l4 offset-l2 s12">
+					<ul>
+						<li><a class="grey-text text-lighten-3" target="_blank" href="http://kombiweb.github.io">Quem somos?</a></li>
+						<li><a class="grey-text text-lighten-3" target="_blank" href="http://www.google.com.br">Do que sobrevivemos?</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="footer-copyright">
+			<div class="container">
+				© 2014 Copyright Text
+			</div>
+		</div>
+	</footer>
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script type="text/javascript" src="JavaScript.js"></script>
     
