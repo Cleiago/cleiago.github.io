@@ -18,17 +18,20 @@
 			$("table").tablesorter();
 
 			$(".videogame #codp, .livro #codp").text('Código do Produto');
-			$(".videogame #nome, .livro #nome").text('Título');
-			$(".videogame #genero, .livro #genero").text('Gênero');
-			$(".videogame #classet, .livro #classet").text('Classificação Etária');
-			$(".videogame #ano, .livro #ano").text('Ano de Publicação');
-			$(".videogame #vlvenda, .livro #vlvenda").text('Valor de Venda');
-			$(".videogame #vlaluga, .livro #vlaluga").text('Valor de Empréstimo');
 			$(".videogame #estfisico, .livro #estfisico").text('Estado Físico');
-			$(".livro #isbn").text('ISBN');
-			$(".livro #autor").text('Autor');
-			$(".videogame #desenv").text('Desenvolvedor');
-			$(".videogame #console").text('Console');
+			$("#vtitulo, #ltitulo").text('Título');
+			$("#vgenero, #lgenero").text('Gênero');
+			$("#vclasset, #lclasset").text('Classificação Etária');
+			$("#vano, #lano").text('Ano de Publicação');
+			$("#vvlvenda, #lvlvenda").text('Valor de Venda');
+			$("#vvlaluga, #lvlaluga").text('Valor de Empréstimo');
+			$("#isbn").text('ISBN');
+			$("#vgid").text('Viedogame ID');
+			$("#lautor").text('Autor');
+			$("#leditora").text('Editora');
+			$("#ledicao").text('Edição');
+			$("#vdesenv").text('Desenvolvedor');
+			$("#vconsole").text('Console');
 
 		});
 	</script>
@@ -52,15 +55,15 @@
 	$banco = conectadb($dbHostname, $dbUsername, $dbPassword);
 	selectdb($banco, $dbDatabase);
 
-	$query = "SELECT p.*,l.isbn,l.autor FROM produto p JOIN livro l ON codp=produto_codp WHERE codp NOT IN (SELECT produto_codp from aluga UNION SELECT produto_codp FROM compra) ORDER BY 1";
+	$query = "SELECT * FROM produto p NATURAL JOIN produtolivro NATURAL JOIN livro l WHERE codp NOT IN (SELECT codp from aluga UNION SELECT codp FROM compra) ORDER BY 1";
 	$livro = query($banco,$query);
 
-	$query = "SELECT p.*,v.desenv,v.console FROM produto p JOIN videogame v ON codp=produto_codp WHERE codp NOT IN (SELECT produto_codp from aluga UNION SELECT produto_codp FROM compra) ORDER BY 1";
+	$query = "SELECT * FROM produto p NATURAL JOIN produtovideogame NATURAL JOIN videogame v WHERE codp NOT IN (SELECT codp from aluga UNION SELECT codp FROM compra) ORDER BY 1";
 	$videogame = query($banco,$query);
 	?>
 
 	<div class='livro'>
-		<h4>HQ's</h4>
+		<h4>Livros e HQ's</h4>
 		<?php PrintTable($livro); ?>
 	</div>
 	<div class='videogame'>

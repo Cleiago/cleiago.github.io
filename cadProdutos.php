@@ -13,22 +13,18 @@
 	
 	<script type="text/javascript">
 		function changeFields(){
-			if(document.getElementById('lv').checked){
-				document.getElementById('lvFields').style.display='block';
-				document.getElementById('vgFields').style.display='none';
+			if($('#lv').is(":checked")) {
+				$('.vginput').attr("required",false);
+				$('.vgFields').hide();
 				
-				document.getElementById('isbn').required = true;
-				document.getElementById('autor').required = true;
-				document.getElementById('desenvolv').required = false;
-				document.getElementById('console').required = false;
+				$('.lvFields').show();
+				$('.lvinput').attr("required",true);
 			}else if(document.getElementById('vg').checked){
-				document.getElementById('vgFields').style.display='block';
-				document.getElementById('lvFields').style.display='none';
+				$('.lvinput').attr("required",false);
+				$('.lvFields').hide();
 
-				document.getElementById('desenvolv').required = true;
-				document.getElementById('console').required = true;
-				document.getElementById('isbn').required = false;
-				document.getElementById('autor').required = false;
+				$('.vgFields').show();
+				$('.vginput').attr("required",true);
 			}
 		}
 
@@ -50,7 +46,24 @@
 			$(document).on("focus", ".select2", function () {
 				$(this).prev().select2('open');
 			});
-		})
+			
+			$(".videogame #codp, .livro #codp").text('Código do Produto');
+			$(".videogame #estfisico, .livro #estfisico").text('Estado Físico');
+			$("#vtitulo, #ltitulo").text('Título');
+			$("#vgenero, #lgenero").text('Gênero');
+			$("#vclasset, #lclasset").text('Classificação Etária');
+			$("#vano, #lano").text('Ano de Publicação');
+			$("#vvlvenda, #lvlvenda").text('Valor de Venda');
+			$("#vvlaluga, #lvlaluga").text('Valor de Empréstimo');
+			$("#isbn").text('ISBN');
+			$("#vgid").text('Viedogame ID');
+			$("#lautor").text('Autor');
+			$("#leditora").text('Editora');
+			$("#ledicao").text('Edição');
+			$("#vdesenv").text('Desenvolvedor');
+			$("#vconsole").text('Console');
+
+		});
 	</script>
 	<style type="text/css">
 		img{
@@ -78,49 +91,101 @@
 		selectdb($banco,$dbDatabase);
 
 		//produto
-		$titulo 		= ucwords(strtolower($_POST['titulo']));
-		$genero 	= ucwords(strtolower($_POST['genero']));
-		$classet 	= $_POST['classet'];
-		$ano 		= $_POST['ano'];
-		$vlvenda	= $_POST['vlvenda'];
-		$vlaluga	= $_POST['vlaluga'];
 		$estfisico	= $_POST['estfisico'];
 		
-		$query = "INSERT INTO produto(nome,genero,classet,ano,vlvenda,vlaluga,estfisico) VALUES ('$titulo','$genero','$classet','$ano','$vlvenda','$vlaluga','$estfisico')";
+		$query = "INSERT INTO produto(estfisico) VALUES ('$estfisico')";
 		$resultado = query($banco, $query);
+		echo "produto";
+
+		$query 	= "SELECT max(codp) FROM produto";
+		$resultado = query($banco, $query);
+		$codp 	= mysqli_fetch_row($resultado)[0];
+		echo $codp;
 		
 		//livro
 		if ($_POST['tipo'] == 'lv'){
-			$isbn 	= $_POST['isbn'];
-			$autor 	= $_POST['autor'];
+			$isbn 		= $_POST['isbn'];
+			$ltitulo 	= ucwords(strtolower($_POST['titulo']));
+			$lautor 	= ucwords(strtolower($_POST['autor']));
+			$lgenero 	= ucwords(strtolower($_POST['genero']));
+			$lclasset 	= $_POST['classet'];
+			$lano 		= $_POST['ano'];
+			$leditora	= ucwords(strtolower($_POST['editora']));
+			$ledicao	= $_POST['edicao'];
+			$lvlvenda	= $_POST['vlvenda'];
+			$lvlaluga	= $_POST['vlaluga'];
 
-			$query 	= "SELECT max(codp) FROM produto";
+			$query 	= "INSERT INTO livro VALUES ('$isbn','$ltitulo','$lautor','$lgenero','$lclasset','$lano','$leditora','$ledicao','$lvlvenda','$lvlaluga')";
 			$resultado = query($banco, $query);
-			$codp 	= mysqli_fetch_row($resultado)[0];
+			echo "livro";
 
-			$query 	= "INSERT INTO livro VALUES ('$isbn','$codp','$autor')";
-			$resultado = query($banco, $query);
+			//produtolivro
+			$query	= "INSERT INTO produtolivro VALUES ('$codp','$isbn')";
+			$resultado = query($banco,$query);
+			echo "produtolivro";
 		}
 		//videogame
 		else if ($_POST['tipo'] == 'vg'){
-			$desenv 	= $_POST['desenv'];
-			$console 	= $_POST['console'];
-
-			$query 	= "SELECT max(codp) FROM produto";
+			$vgid 		= $_POST['vgid'];
+			$vtitulo 	= ucwords(strtolower($_POST['titulo']));
+			$vdesenv 	= ucwords(strtolower($_POST['desenv']));
+			$vgenero 	= ucwords(strtolower($_POST['genero']));
+			$vclasset 	= $_POST['classet'];
+			$vano 		= $_POST['ano'];
+			$vconsole 	= ucwords(strtolower($_POST['console']));
+			$vvlvenda	= $_POST['vlvenda'];
+			$vvlaluga	= $_POST['vlaluga'];
+			
+			$query 	= "INSERT INTO videogame VALUES ('$vgid','$vtitulo','$vdesenv','$vgenero','$vclasset','$vano','$vconsole','$vvlvenda','$vvlaluga')";
 			$resultado = query($banco, $query);
-			$codp 	= mysqli_fetch_row($resultado)[0];
+			echo "videogame";
 
-			$query 	= "INSERT INTO videogame VALUES ('$desenv','$codp','$console')";
-			$resultado = query($banco, $query);
+			//produtovideogame
+			$query 	= "INSERT INTO produtovideogame VALUES ('$codp','$vgid')";
+			$resultado = query($banco,$query);
+			echo "produtovideogame";
 		}
 	}
 	?>
 	
 	<form name='cadastro' method='post' accept-charset="utf-8">
 		<p>
+			<label for='tipo'>Tipo:</label>
+			<label>
+				<input type='radio' name='tipo' id='lv' value='lv' onclick='changeFields()' required>HQ
+			</label>
+			<label>
+				<input type='radio' name='tipo' id='vg' value='vg' onclick='changeFields()' required>Videogame
+			</label>
+		</p>
+		<div class='lvFields' style='display:none'>
+			<p>
+				<label for='isbn'>ISBN:</label>
+				<input type='text' class='lvinput' id='isbn' name='isbn'>
+			</p>
+		</div>
+		<div class='vgFields' style='display:none'>
+			<p>
+				<label for='vgid'>Videogame ID:</label>
+				<input type='text' class='vginput' id='vgid' name='vgid'>
+			</p>
+		</div>
+		<p>
 			<label for='titulo'>Título:</label>
 			<input type='text' id='titulo' name='titulo' size='70' maxlength='70' required>
 		</p>
+		<div class='lvFields' style='display:none'>
+			<p>
+				<label for='autor'>Autor:</label>
+				<input type='text' class='lvinput' id='autor' name='autor' size='30' maxlength='30'>
+			</p>
+		</div>
+		<div class='vgFields' style='display:none'>
+			<p>
+				<label for='desenv'>Desenvolvedor:</label>
+				<input type='text' class='vginput' id='desenv' name='desenv' size='20' maxlength='20'>
+			</p>
+		</div>
 		<p>
 			<label for='genero'>Gênero:</label>
 			<input type='text' id='genero' name='genero' size='20' maxlength='20' required>
@@ -140,6 +205,22 @@
 			<label for='ano'>Ano de Publicação:</label>
 			<input type='year' id='ano' name='ano' required>
 		</p>
+		<div class='lvfields' style='display:none'>
+			<p>
+				<label for='editora'>Editora:</label>
+				<input type='text' id='editora' name='editora' size='30' maxlength='30'>
+			</p>
+			<p>
+				<label for='edicao'>Edição:</label>
+				<input type='text' id='edicao' name='edicao'>
+			</p>
+		</div>
+		<div class='vgFields' style='display:none'>
+			<p>
+				<label for='console'>Console:</label>
+				<input type='text' class='vginput' id='console' name='console' size='20' maxlength='20'>
+			</p>
+		</div>
 		<p>
 			<label for='vlvenda'>Valor para Venda:</label>
 			<input type='text' id='vlvenda' name='vlvenda' required>
@@ -159,35 +240,6 @@
 				<option value='Pessimo'>Péssimo</option>
 			</select>
 		</p>
-		<p>
-			<label for='tipo'>Tipo:</label>
-			<label>
-				<input type='radio' name='tipo' id='lv' value='lv' onclick='changeFields()' required>HQ
-			</label>
-			<label>
-				<input type='radio' name='tipo' id='vg' value='vg' onclick='changeFields()' required>Videogame
-			</label>
-		</p>
-		<div id='lvFields' style='display:none'>
-		<p>
-			<label for='isbn'>ISBN:</label>
-			<input type='text' class='lv' id='isbn' name='isbn'>
-		</p>
-		<p>
-			<label for='autor'>Autor:</label>
-			<input type='text' class='lv' id='autor' name='autor' size='30' maxlength='30'>
-		</p>
-		</div>
-		<div id='vgFields' style='display:none'>
-		<p>
-			<label for='desenv'>Desenvolvedor:</label>
-			<input type='text' class='vg' id='desenv' name='desenv' size='20' maxlength='20'>
-		</p>
-		<p>
-			<label for='console'>Console:</label>
-			<input type='text' class='vg' id='console' name='console' size='20' maxlength='20'>
-		</p>
-		</div>
 		<input type='submit' name='submit' value='Cadastrar'>
 	</form>
 
@@ -197,9 +249,9 @@
 		if($resultado){
 			echo "<p>Produto Cadastrado!</p>";
 			if ($_POST['tipo']=='lv'){
-				$query = "SELECT produto.*,autor,isbn FROM produto JOIN livro ON codp=produto_codp WHERE codp=(SELECT max(codp) FROM produto)";
+				$query = "SELECT * FROM produto p NATURAL JOIN produtolivro NATURAL JOIN livro l WHERE codp=(SELECT max(codp) FROM produto)";
 			} else if ($_POST['tipo']=='vg'){
-				$query = "SELECT produto.*,desenv,console FROM produto JOIN videogame ON codp=produto_codp WHERE codp=(SELECT max(codp) FROM produto)";
+				$query = "SELECT * FROM produto p NATURAL JOIN produtovideogame NATURAL JOIN videogame v WHERE codp=(SELECT max(codp) FROM produto)";
 			}
 			PrintTable(query($banco,$query));
 		}
