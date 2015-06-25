@@ -5,48 +5,20 @@
 	<title>Login</title>
 	<meta charset='UTF-8'>
 	<link rel="stylesheet" type="text/css" href="mainCSS.css ">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css">
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>     
 </head>
 <body class="fundo">
 	<?php 
-	if(isset($_SESSION["login"])){
-		echo "<p>Usuário Conectado</p>";
-		if(isset($_GET['url'])){
-			echo "<meta http-equiv=\"refresh\" content=\"1; url=".$_GET['url']."\">";
-		}else{
-			echo "<meta http-equiv=\"refresh\" content=\"0; url=index.php\">";
-		}
-	}else if(isset($_POST["submit"])){
-		require_once 'fcnsdb.php';
-		require_once 'logindb.php';
-		$banco = conectadb($dbHostname, $dbUsername, $dbPassword);
-
-		selectdb($banco, $dbDatabase);
-
-		$login = $_POST["login"];
-		$senha = $_POST["pass"];
-		$query = "SELECT name FROM user WHERE login ='".$login."' AND password ='".$senha."'";
-		$resultado = query($banco, $query);
-	}
-		
-	?>
-	<nav>
-   		<div class="nav-wrapper">
-      		<a href="#" class="brand-logo right">CLEIAGO</a>
-      		<ul id="nav-mobile" class="left hide-on-med-and-down">
-        		<li><a href="">COMICS</a></li>
-      		</ul>
-    	</div>
-  	</nav>
-		<div class="bg-transparent container">
-		<?php 
 		if(isset($_SESSION["login"])){
 			echo "<p>Usuário Conectado</p>";
 			if(isset($_GET['url'])){
 				echo "<meta http-equiv=\"refresh\" content=\"1; url=".$_GET['url']."\">";
+				exit();
 			}else{
 				echo "<meta http-equiv=\"refresh\" content=\"0; url=index.php\">";
+				exit();
 			}
 		}else if(isset($_POST["submit"])){
 			require_once 'fcnsdb.php';
@@ -67,27 +39,36 @@
 				if(isset($_GET['url'])){
 					echo "<meta http-equiv=\"refresh\" content=\"1; url=".$_GET['url']."\">";
 				}
-				exit;
+				exit();
 			}else{
 				echo "<meta http-equiv=\"refresh\" content=\"0; url=\"authentication.php?user=".false."\">";
-				exit;
+				exit();
 			}
-		}else {
-			echo "<form name='autentication' action='' method='post'>
-					<p>
-						<label \"black-text text-darken-2\" for='idlogin'>Login</label>
-						<input class=\"black-text text-darken-2\" type='text' id='idlogin' name='login' size='15' maxlength='15'>
-					</p>
-					<p>
-						<label \"black-text text-darken-2\" for='idpass'>Senha</label>
-						<input class=\"black-text text-darken-2\" type='password' id='idpass' name='pass' size='15' maxlength='15'>
-					</p>
-					<button class=\"red lighten-2 btn waves-effect waves-light\" type=\"submit\" name=\"submit\" value=\"Conectar\">Submit
-    					<i class=\"mdi-content-send right\"></i>
-  					</button>
-				</form>";
-		}
+	?>
+	<nav>
+   		<div class="nav-wrapper">
+      		<a href="#" class="brand-logo right">CLEIAGO</a>
+      		<ul id="nav-mobile" class="left hide-on-med-and-down">
+        		<li><a href="">COMICS</a></li>
+      		</ul>
+    	</div>
+  	</nav>
+		<div class="bg-transparent container">
+			<form name='autentication' action='' method='post'>
+				<p>
+					<label class='black-text text-darken-2' for='idlogin'>Login</label>
+					<input class='black-text text-darken-2' type='text' id='idlogin' name='login' size='15' maxlength='15'>
+				</p>
+				<p>
+					<label class='black-text text-darken-2' for='idpass'>Senha</label>
+					<input class='black-text text-darken-2' type='password' id='idpass' name='pass' size='15' maxlength='15'>
+				</p>
+				<button class='red lighten-2 btn waves-effect waves-light' type='submit' name='submit' value='Conectar'>Submit
+					<i class='mdi-content-send right'></i>
+					</button>
+			</form>
 
+		<?php
 		if(isset($_GET["user"])){
 			echo "<p class= \"black-text text-darken-2\">Login e/ou senha inválidos</p>";
 		}
