@@ -55,8 +55,8 @@
 				</ul>
 				<span class="controller controller-nav" id="btRB"></span>
 				<ul id="dropdown5" class="dropdown-content">
-					<li><a href="verProdutos.php" class="black-text text">Cadastrar Produtos</a></li>
-					<li><a href="cadProdutos.php" class="black-text text">Lista Produtos</a></li>
+					<li><a href="cadProdutos.php" class="black-text text">Cadastrar Produtos</a></li>
+					<li><a href="verProdutos.php" class="black-text text">Lista Produtos</a></li>
 				</ul>
 				<span class="controller controller-nav" id="btRB"></span>
 				<ul id="dropdown7" class="dropdown-content">

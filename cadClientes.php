@@ -89,7 +89,7 @@
 				<input type='text' id='tel1' name='tel1' size='15' maxlength='15' required>
 			</p>
 			<p>
-				<label class= "black-text text-darken-2" for='tel2'>Telefone:</label>
+				<label class= "black-text text-darken-2" for='tel2'>Celular:</label>
 				<input type='text' id='tel2' name='tel2' size='15' maxlength='15' onfocus='if(this.value=="")this.value=null'>
 			</p>
 			<button class="red lighten-2 btn waves-effect waves-light" type="submit" name="submit" value="Cadastrar">Submit

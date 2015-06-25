@@ -13,25 +13,27 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
 
 	<script type="text/javascript">
-		function changeFields(){
-			if(document.getElementById('lv').checked){
+		console.debug("oiiii")
+		function changeFieldsHQ(){
+				console.debug("oi");
 				document.getElementById('lvFields').style.display='block';
 				document.getElementById('vgFields').style.display='none';
-				
 				document.getElementById('isbn').required = true;
 				document.getElementById('autor').required = true;
 				document.getElementById('desenvolv').required = false;
 				document.getElementById('console').required = false;
-			}else if(document.getElementById('vg').checked){
+		}
+		function changeFieldsVG(){
+			console.debug("entreii")
 				document.getElementById('vgFields').style.display='block';
 				document.getElementById('lvFields').style.display='none';
-
 				document.getElementById('desenvolv').required = true;
 				document.getElementById('console').required = true;
 				document.getElementById('isbn').required = false;
 				document.getElementById('autor').required = false;
 			}
-		}
+
+
 
 		function formatclass (classet) {
 			if (!classet.id) { return classet.text; }
@@ -73,6 +75,7 @@
 	</nav>
 
 	<h3>Cadastro de Novo Produto</h3>
+
 	<?php 
 	if(isset($_SESSION["login"])){
 		
@@ -175,36 +178,35 @@
 		<p>
 			<label class="black-text text-darken-2" for='tipo'>Tipo:</label>
 			<label class="black-text text-darken-2">
-				<a class="red lighten-2 waves-effect waves-teal btn"  name='tipo' id='lv' value='lv' onclick='changeFields()' required>HQ</a>
+				<a class="red lighten-2 waves-effect waves-teal btn"  name='tipo' id='lv' value='lv' onclick='changeFieldsHQ()' required>HQ</a>
 			</label>
 			<label class="black-text text-darken-2">
-				<a class="red lighten-2 waves-effect waves-teal btn" name='tipo' id='vg' value='vg' onclick='changeFields()' required>Videogame</a>
+				<a class="red lighten-2 waves-effect waves-teal btn" name='tipo' id='vg' value='vg' onclick='changeFieldsVG()' required>Videogame</a>
 			</label>
 		</p>
-		<div id='lvFields' style='display:none'>
-		<p>
-			<label class="black-text text-darken-2" for='isbn'>ISBN:</label>
-			<input class="black-text text-darken-2" type='text' class='lv' id='isbn' name='isbn'>
-		</p>
-		<p>
-			<label class="black-text text-darken-2" for='autor'>Autor:</label>
-			<input class="black-text text-darken-2" type='text' class='lv' id='autor' name='autor' size='30' maxlength='30'>
-		</p>
+		<div id='lvFields' class="hq">
+			<p>
+				<label class="black-text text-darken-2" for='isbn'>ISBN:</label>
+				<input class="black-text text-darken-2" type='text' class='lv' id='isbn' name='isbn'>
+			</p>
+			<p>
+				<label class="black-text text-darken-2" for='autor'>Autor:</label>
+				<input class="black-text text-darken-2" type='text' class='lv' id='autor' name='autor' size='30' maxlength='30'>
+			</p>
 		</div>
-		<div id='vgFields' style='display:none'>
-		<p>
-			<label class="black-text text-darken-2" for='desenv'>Desenvolvedor:</label>
-			<input class="black-text text-darken-2" type='text' class='vg' id='desenv' name='desenv' size='20' maxlength='20'>
-		</p>
-		<p>
-			<label class="black-text text-darken-2" for='console'>Console:</label>
-			<input class="black-text text-darken-2" type='text' class='vg' id='console' name='console' size='20' maxlength='20'>
-		</p>
+		<div id='vgFields' class="vg" >
+			<p>
+				<label class="black-text text-darken-2" for='desenv'>Desenvolvedor:</label>
+				<input class="black-text text-darken-2" type='text' class='vg' id='desenv' name='desenv' size='20' maxlength='20'>
+			</p>
+			<p>
+				<label class="black-text text-darken-2" for='console'>Console:</label>
+				<input class="black-text text-darken-2" type='text' class='vg' id='console' name='console' size='20' maxlength='20'>
+			</p>
 		</div>
 		<button class="red lighten-2 btn waves-effect waves-light" type="submit" name="submit" value="cadastrar">Submit
    			<i class="mdi-content-send right"></i>
   		</button>
-		
 	</form>
 
 	<?php 
