@@ -24,7 +24,7 @@
 	<nav>
 		<div class="nav-wrapper">
 			<a href="#" data-activates="mobile-sidenav" class="button-collapse"><i class="mdi-navigation-menu"></i><span class="controller controller-nav-mobile" id="btRB"></span></a>
-			<a class="brand-logo right" href="/">CLEIAGO</a>
+			<a class="brand-logo right" href="./">CLEIAGO</a>
 			<ul id="nav-mobile" class="light hide-on-med-and-down">
 				<span class="controller controller-nav" id="btRB"></span>
 				<ul id="dropdown2" class="dropdown-content">
@@ -33,8 +33,8 @@
 				</ul>
 				<span class="controller controller-nav" id="btRB"></span>
 				<ul id="dropdown3" class="dropdown-content">
-					<li><a href="verProdutos.php" class="black-text text">Lista Produtos</a></li>
 					<li><a href="cadProdutos.php" class="black-text text">Cadastrar Produtos</a></li>
+					<li><a href="verProdutos.php" class="black-text text">Lista Produtos</a></li>
 				</ul>
 				<ul id="dropdown6" class="dropdown-content">
 					<li><a href="aluga.php" class="black-text text">Empréstimo</a></li>
@@ -55,14 +55,14 @@
 				</ul>
 				<span class="controller controller-nav" id="btRB"></span>
 				<ul id="dropdown5" class="dropdown-content">
-					<li><a href="cadProdutos.php" class="black-text text">Lista Produtos</a></li>
 					<li><a href="verProdutos.php" class="black-text text">Cadastrar Produtos</a></li>
+					<li><a href="cadProdutos.php" class="black-text text">Lista Produtos</a></li>
 				</ul>
 				<span class="controller controller-nav" id="btRB"></span>
 				<ul id="dropdown7" class="dropdown-content">
-					<li><a href="aluga.php" class="black-text text">Lista Produtos</a></li>
-					<li><a href="devolucao.php" class="black-text text">Cadastrar Produtos</a></li>
-					<li><a href="compra.php" class="black-text text">Cadastrar Produtos</a></li>
+					<li><a href="aluga.php" class="black-text text">Empréstimo</a></li>
+					<li><a href="devolucao.php" class="black-text text">Devolução</a></li>
+					<li><a href="compra.php" class="black-text text">Compra</a></li>
 				</ul>
 				<a class="white btn dropdown-button" href="#!" data-activates="dropdown4">Clientes<i class= "mdi-navigation-expand-more right"></i></a>
 				<a class="white btn dropdown-button" href="#!" data-activates="dropdown5">Produtos<i class= "mdi-navigation-expand-more right"></i></a>

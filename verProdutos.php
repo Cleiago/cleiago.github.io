@@ -60,7 +60,7 @@
 	?>
 
 	<div class='livro'>
-		<h4>Livros</h4>
+		<h4>HQ's</h4>
 		<?php PrintTable($livro); ?>
 	</div>
 	<div class='videogame'>

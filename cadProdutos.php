@@ -159,7 +159,7 @@
 		<p>
 			<label for='tipo'>Tipo:</label>
 			<label>
-				<input type='radio' name='tipo' id='lv' value='lv' onclick='changeFields()' required>Livro
+				<input type='radio' name='tipo' id='lv' value='lv' onclick='changeFields()' required>HQ
 			</label>
 			<label>
 				<input type='radio' name='tipo' id='vg' value='vg' onclick='changeFields()' required>Videogame
