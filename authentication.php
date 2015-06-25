@@ -44,6 +44,7 @@
 				echo "<meta http-equiv=\"refresh\" content=\"0; url=\"authentication.php?user=".false."\">";
 				exit();
 			}
+		}
 	?>
 	<nav>
    		<div class="nav-wrapper">
