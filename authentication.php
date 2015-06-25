@@ -75,12 +75,12 @@
 		}else {
 			echo "<form name='autentication' action='' method='post'>
 					<p>
-						<label for='idlogin'>Login</label>
-						<input class=\"white-text text-darken-2\" type='text' id='idlogin' name='login' size='15' maxlength='15'>
+						<label \"black-text text-darken-2\" for='idlogin'>Login</label>
+						<input class=\"black-text text-darken-2\" type='text' id='idlogin' name='login' size='15' maxlength='15'>
 					</p>
 					<p>
-						<label for='idpass'>Senha</label>
-						<input class=\"white-text text-darken-2\" type='password' id='idpass' name='pass' size='15' maxlength='15'>
+						<label \"black-text text-darken-2\" for='idpass'>Senha</label>
+						<input class=\"black-text text-darken-2\" type='password' id='idpass' name='pass' size='15' maxlength='15'>
 					</p>
 					<button class=\"red lighten-2 btn waves-effect waves-light\" type=\"submit\" name=\"submit\" value=\"Conectar\">Submit
     					<i class=\"mdi-content-send right\"></i>
@@ -89,7 +89,7 @@
 		}
 
 		if(isset($_GET["user"])){
-			echo "<p class= \"white-text text-darken-2\">Login e/ou senha inválidos</p>";
+			echo "<p class= \"black-text text-darken-2\">Login e/ou senha inválidos</p>";
 		}
 		?>
 	</div>
