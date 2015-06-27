@@ -18,7 +18,7 @@
 
 	<script type="text/javascript">
 		$(document).ready(function(){
-			$("table").tablesorter();
+			$("responsive-table").tablesorter();
 
 			$(".videogame #codp, .livro #codp").text('Código do Produto');
 			$(".videogame #estfisico, .livro #estfisico").text('Estado Físico');
@@ -81,7 +81,7 @@
 	$videogame = query($banco,$query);
 	?>
 
-	<div class='livro'>
+	<div class="livro">
 		<h4>Livros e HQ's</h4>
 		<?php PrintTable($livro); ?>
 	</div>

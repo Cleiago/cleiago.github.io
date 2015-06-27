@@ -3,8 +3,8 @@
 <html>
 <head>
 	<title>Cadastro de Produtos</title>
+
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-	
 	<meta charset='UTF-8'>
 	<link rel="stylesheet" type="text/css" href="mainCSS.css ">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css">
@@ -164,7 +164,7 @@
 	<form name='cadastro' method='post' accept-charset="utf-8">
 		<p>
 			<label class="black-text text-darken-2" for='tipo'>Tipo:</label>
-			<input class='with-gap' type='radio' name='tipo' id='lvcheck' value='lv' onclick='changeFields()' required>
+			<input class='with-gap ' type='radio' name='tipo' id='lvcheck' value='lv' onclick='changeFields()' required>
 			<label class="black-text text-darken-2" for='lvcheck'>Livro / HQ</label>
 
 			<input class='with-gap' type='radio' name='tipo' id='vgcheck' value='vg' onclick='changeFields()' required>
@@ -205,7 +205,7 @@
 		<div class="black-text text-darken-2 input-field col s6">
 			<!--<label for='classet'>Classificação Etária:</label>-->
 			
-				<select id='classet' name='classet' required class="select-custom">
+				<select id='classet' name='classet' required class="js-example-responsive" style="width: 50%">
 					<option disabled selected>Classificação Etária</option>
 					<option value='0'>Livre</option>
 					<option value='10'>Proibido para menores de 10 anos.</option>
@@ -274,6 +274,7 @@
 		}
 	}
 	?>
+</div>
 </div>
 <footer class="page-footer">
 		<div class="container">
