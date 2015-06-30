@@ -62,8 +62,10 @@
 		
 		$query = "SELECT codp FROM produto WHERE codp NOT IN (SELECT codp FROM aluga WHERE dtdev IS NULL UNION SELECT codp FROM compra)";
 		$productOptions = query($banco,$query);
+		//$query = "SELECT estfisico FROM produto WHERE codp NOT IN (SELECT codp FROM aluga WHERE dtdev IS NULL UNION SELECT codp FROM compra)";
 		$query = "SELECT cpf FROM cliente";
 		$clientOptions = query($banco,$query);
+		//$query = "SELECT estfisico FROM produto WHERE codp NOT IN (SELECT codp FROM aluga WHERE dtdev IS NULL UNION SELECT codp FROM compra)";
 
 		if(isset($_POST['submit'])){
 
@@ -85,6 +87,8 @@
 			<select name='ccpf' id='ccpf' style='width: 150px' required>";
 				<?php SelectValues($clientOptions); ?>
 			</select>
+			
+
 		</p>
 		<p>
 			<label class="black-text text-darken-2" for='pcodp'>Codigo do Produto:</label>
